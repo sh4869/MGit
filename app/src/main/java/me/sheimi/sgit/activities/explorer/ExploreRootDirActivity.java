@@ -1,6 +1,7 @@
 package me.sheimi.sgit.activities.explorer;
 
 import android.os.Environment;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,12 +15,8 @@ import me.sheimi.sgit.database.models.Repo;
 
 public class ExploreRootDirActivity extends FileExplorerActivity {
 
-
-
     @Override
-    protected File getRootFolder() {
-        return Environment.getExternalStorageDirectory();
-    }
+    protected File getRootFolder() { return getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS); }
 
     @Override
     protected FileFilter getExplorerFileFilter() {
